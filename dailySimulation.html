@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mukwaya Lwere's Daily Schedule Simulation</title>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 60px; background-color: #eef;">
+
+  <h1>Mukwaya Lwere's Simulated Day</h1>
+  <div id="output" style="margin-top: 40px; font-size: 1.5rem;"></div>
+
+  <script>
+    // By Mukwaya Lwere - everyday has its routine and surprises.
+
+    // Grab the spot where Mukwaya's day will unfold on the page
+    const outputArea = document.getElementById("output");
+
+    // Start the display with a natural opening
+    outputArea.textContent = "Waking up... (Mukwaya Lwere)";
+
+    // We'll keep a running total to stagger events like a real schedule
+    let dayProgress = 0;
+
+    // This function adds a new event/message to the "day"
+    function logActivity(activityText) {
+      const line = document.createElement('div');
+      line.textContent = activityText;
+      outputArea.appendChild(line);
+    }
+
+    // Mukwaya's real-life morning (events added with real personality)
+    setTimeout(() => {
+      logActivity("7:00 AM: Mukwaya Lwere's alarm goes off— honestly, I hit snooze at least once.");
+    }, dayProgress += 1000);
+
+    setTimeout(() => {
+      logActivity("7:30 AM: Quick shower time. I try to plan my to-do list while half-awake.");
+    }, dayProgress += 1400);
+
+    setTimeout(() => {
+      logActivity("8:00 AM: First cup of coffee (a must!). Mukwaya starts to wake up and check messages.");
+    }, dayProgress += 1700);
+
+    setTimeout(() => {
+      logActivity("8:40 AM: Checking in for CS 81 JavaScript class. Mukwaya's ready for some async code.");
+    }, dayProgress += 2100);
+
+    setTimeout(() => {
+      logActivity("10:30 AM: Reviewing last night's notes, with a Spotify playlist as background—Mukwaya multitasking.");
+    }, dayProgress += 1650);
+
+    setTimeout(() => {
+      logActivity("12:30 PM: It's lunch! Mukwaya makes a sandwich and takes a break to call a friend.");
+    }, dayProgress += 1800);
+
+    // Mukwaya's signature twist—random energy or mood at 3PM!
+    const moodEmojis = ["😎", "🤪", "😉", "😌", "😂"];
+    const randomMood = moodEmojis[Math.floor(Math.random() * moodEmojis.length)];
+    const surpriseTime = Math.floor(Math.random() * 1300) + 1000; // random ~1s-2.3s
+
+    setTimeout(() => {
+      logActivity(`${randomMood} 3:00 PM: Classic Mukwaya move—random burst of project inspiration, time for sticky notes and new ideas.`);
+    }, dayProgress += surpriseTime);
+
+    setTimeout(() => {
+      logActivity("10:45 PM: Mukwaya Lwere wraps up by reading a chapter of a good book before lights out.");
+    }, dayProgress += 1900);
+
+    // Personal Mukwaya sign-off
+    setTimeout(() => {
+      logActivity("— End of day for Mukwaya Lwere —");
+    }, dayProgress += 1200);
+  </script>
+
+</body>
+</html>
